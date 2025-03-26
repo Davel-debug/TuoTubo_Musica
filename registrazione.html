@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registrazione</title>
+</head>
+<body>
+  <form>
+    <h2>Registrazione per TuoTubo Musica</h2>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    <br>
+    <label for="cognome">Cognome:</label>
+    <input type="text" id="cognome" name="cognome" required>
+    <br>
+    <label for="email">Indirizzo email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <label for="data-di-nascita">Data di nascita per deboli:</label>
+    <input type="date" id="data-di-nascita" name="data-di-nascita" required>
+    <br>
+    <label for="data-di-nascita-range">Data di nascita per Pro:</label>
+    <input type="range" id="data-di-nascita-range" name="data-di-nascita-range" min="0" max="930485" value="0" style="width:100%; margin: 0 auto;">
+    <output for="data-di-nascita-range" id="output-data-di-nascita-range"></output>
+    <br>
+    <label for="numero-di-telefono">Numero di telefono per deboli:</label>
+    <input type="tel" id="numero-di-telefono" name="numero-di-telefono" required>
+    <br>
+    <label for="numero-di-telefono-range">Numero di telefono per Pro:</label>
+    <input type="number" id="numero-di-telefono-range" name="numero-di-telefono-range" min="0" max="9999999999" value="0" step="1"  onkeydown="return false;">
+    <output for="numero-di-telefono-range" id="output-numero-di-telefono-range"></output>
+    <br
+    <br>
+    <label>Gusti musicali:</label>
+    <input type="checkbox" id="rock" name="gusti-musicali" value="rock">
+    <label for="rock">Rock</label>
+    <input type="checkbox" id="pop" name="gusti-musicali" value="pop">
+    <label for="pop">Pop</label>
+    <input type="checkbox" id="jazz" name="gusti-musicali" value="jazz">
+    <label for="jazz">Jazz</label>
+    <input type="checkbox" id="Rap" name="gusti-musicali" value="Rap">
+    <label for="Rap">Rap</label>
+    <input type="checkbox" id="Reggae" name="gusti-musicali" value="Reggae">
+    <label for="Reggae">Reggae</label>
+    <input type="checkbox" id="Latin" name="gusti-musicali" value="Latin">
+    <label for="Latin">Latin</label>
+    <input type="checkbox" id="Bossanova" name="gusti-musicali" value="Bossanova">
+    <label for="Bossanova">Bossanova</label>
+    <input type="checkbox" id="Funky" name="gusti-musicali" value="Funky">
+    <label for="Funky">Funky</label>
+    <input type="checkbox" id="Napoletano" name="gusti-musicali" value="Napoletano">
+    <label for="Napoletano">Napoletano</label>
+    <br>
+    <label>Accettazione dei termini e condizioni:</label>
+    <input type="radio" id="accettazione" name="accettazione" value="si" required>
+    <label for="accettazione">Sì</label>
+    <input type="radio" id="non-accettazione" name="accettazione" value="no">
+    <label for="non-accettazione">No</label>
+    <br>
+    <button type="submit">Invia registrazione</button>
+    <br>
+    <img src="https://i.pinimg.com/originals/fb/f7/64/fbf76458d74b5236cb7ee9208563bebc.gif" alt="GIF" style="width: 310px; height: 260px;" >
+  </form>
+  <script>
+    const range = document.getElementById('data-di-nascita-range');
+    const output = document.getElementById('output-data-di-nascita-range');
+    range.addEventListener('input', () => {
+      const data = new Date(-62135596800000);
+      data.setDate(data.getDate() + parseInt(range.value));
+      output.value = data.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' });
+    });
+  </script>
+</body>
+</html>
